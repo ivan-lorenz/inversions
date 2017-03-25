@@ -27,7 +27,7 @@ public class Inversions {
                 d[count] = a[i++];
             else {
                 d[count] = a[j++];
-                numberOfInversions++;
+                numberOfInversions += ave - i;
             }
             count++;
         }

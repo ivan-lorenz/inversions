@@ -9,7 +9,7 @@ class InversionsTest extends FlatSpec {
   }
 
   it should "should compute inversions for b case" in {
-    assert(Inversions.getNumberOfInversions(Array(9, 8, 7, 3, 2, 1), Array.empty[Int],0, 5) == 15)
+    assert(Inversions.getNumberOfInversions(Array(9, 8, 7, 3, 2, 1), Array.empty[Int],0, 6) == 15)
   }
 
 }
