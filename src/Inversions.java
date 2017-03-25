@@ -7,6 +7,17 @@ public class Inversions {
         if (right <= left + 1) {
             return numberOfInversions;
         }
+
+        boolean sorted = true;
+        for (int i = left; i < right - 1; i++) {
+            if (a[i] > a[i+1]) {
+                sorted = false;
+                break;
+            }
+        }
+        if (sorted)
+            return 0;
+
         int ave = (left + right) / 2;
         numberOfInversions += getNumberOfInversions(a, b, left, ave);
         numberOfInversions += getNumberOfInversions(a, b, ave, right);
