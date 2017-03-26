@@ -22,25 +22,24 @@ public class Inversions {
         numberOfInversions += getNumberOfInversions(a, b, left, ave);
         numberOfInversions += getNumberOfInversions(a, b, ave, right);
 
-        numberOfInversions += merge(a,b,left,ave,right);
+        numberOfInversions += merge(a,left,ave,right);
 
         return numberOfInversions;
     }
 
-    private static long merge(int[] a, int[] b, int left, int ave, int right) {
+    private static long merge(int[] a, int left, int ave, int right) {
         int d[] = new int[right - left];
         int i = left;
         int j = ave;
         int count = 0;
-        int numberOfInversions = 0;
+        long numberOfInversions = 0;
         while (i < ave && j < right) {
             if (a[i] <= a[j])
-                d[count] = a[i++];
+                d[count++] = a[i++];
             else {
-                d[count] = a[j++];
+                d[count++] = a[j++];
                 numberOfInversions += ave - i;
             }
-            count++;
         }
         while (i < ave)
             d[count++] = a[i++];
